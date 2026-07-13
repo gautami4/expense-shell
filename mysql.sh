@@ -24,12 +24,8 @@ then
 fi
 
 if [ $USERIDD -eq 0 ]
-then
-    
+then    
     packages()
-        
-    fi
-
 fi     
 
 for packages in $@
@@ -42,6 +38,7 @@ do
     else
         dnf install $packages -y
         VALIDATE $? $packages
+    fi    
 
 done
 

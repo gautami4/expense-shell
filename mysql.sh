@@ -42,7 +42,7 @@ do
         dnf list installed $packages -y  &>>$LOG_FILE_NAME
         if [ $? -eq 0 ]
         then
-            echo " $packages already installed"
+            echo "$packages already installed"
         else
             dnf install $packages -y &>>$LOG_FILE_NAME
             VALIDATE $? $packages

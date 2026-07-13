@@ -1,13 +1,13 @@
 #!/bin/bash
 
-USERID=$(id -u)
+USERIDD=$(id -u)
 
-if ( $USERID -ne 0 )
+if ( $USERIDD -ne 0 )
 then
     echo "you should have root access to run this script"
 fi
 
-if ( $? -eq 0 )
+if ( $USERIDD -eq 0 )
 then
     dnf list installed mysql
     if ( $? -eq 0 )

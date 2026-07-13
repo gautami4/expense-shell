@@ -16,16 +16,16 @@ VALIDATE(){
         fi
 }
 
-echo " The script started at : $TIMESTAMP"
+echo "The script started at : $TIMESTAMP"  &>>$LOG_FILE_NAME
 
 if [ $USERIDD -ne 0 ]
 then
-    echo "you should have root access to run this script"
+    echo "you should have root access to run this script" 
 fi
 
 if [ $USERIDD -eq 0 ]
 then
-    dnf list installed nginx
+    dnf list installed nginx -y  &>>$LOG_FILE_NAME
     if [ $? -eq 0 ]
     then
         echo "nginx already installed"

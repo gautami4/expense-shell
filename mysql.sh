@@ -25,16 +25,26 @@ fi
 
 if [ $USERIDD -eq 0 ]
 then
-    dnf list installed nginx -y  &>>$LOG_FILE_NAME
-    if [ $? -eq 0 ]
-    then
-        echo "nginx already installed"
-    else
-        dnf install nginx -y
-        VALIDATE $? "nginx"
+    
+    packages()
         
     fi
 
 fi     
+
+for packages in $@
+do
+
+    dnf list installed $packages -y  &>>$LOG_FILE_NAME
+    if [ $? -eq 0 ]
+    then
+        echo " $packages already installed"
+    else
+        dnf install $packages -y
+        VALIDATE $? $packages
+
+done
+
+
 
 

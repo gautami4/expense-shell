@@ -22,23 +22,21 @@ if [ $USERIDD -ne 0 ]
 then
     echo "you should have root access to run this script" 
 fi
-
-if [ $USERIDD -eq 0 ]
-then    
-    packages()
-fi     
+   
 
 for packages in $@
 do
-
-    dnf list installed $packages -y  &>>$LOG_FILE_NAME
-    if [ $? -eq 0 ]
-    then
-        echo " $packages already installed"
-    else
-        dnf install $packages -y
-        VALIDATE $? $packages
-    fi    
+    if [ $USERIDD -eq 0 ]
+    then 
+        dnf list installed $packages -y  &>>$LOG_FILE_NAME
+        if [ $? -eq 0 ]
+        then
+            echo " $packages already installed"
+        else
+            dnf install $packages -y
+            VALIDATE $? $packages
+        fi
+    fi        
 
 done
 

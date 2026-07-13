@@ -5,7 +5,7 @@ USERIDD=$( id -u )
 LOGS_FOLDER="/var/log/expense-shell.log"
 LOG_FILES=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE_NAME="$LOGS_FOLDER/$LOGS_FILES-$TIMESTAMP.log" 
+LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILES-$TIMESTAMP.log" 
 
 VALIDATE(){
     if [ $1 -eq 0 ]

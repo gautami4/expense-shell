@@ -33,7 +33,7 @@ do
         then
             echo " $packages already installed"
         else
-            dnf install $packages -y
+            dnf install $packages -y &>>$LOG_FILE_NAME
             VALIDATE $? $packages
         fi
     fi        

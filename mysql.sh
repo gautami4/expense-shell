@@ -16,12 +16,23 @@ VALIDATE(){
         fi
 }
 
+
+
+CHECK_ROOT(){
+
+    if [ $USERIDD -ne 0 ]
+    then
+        echo "you should have root access to run this script" 
+        exit 1
+    fi
+
+
+}
+
 echo "The script started at : $TIMESTAMP"  &>>$LOG_FILE_NAME
 
-if [ $USERIDD -ne 0 ]
-then
-    echo "you should have root access to run this script" 
-fi
+CHECK_ROOT
+
    
 
 for packages in $@

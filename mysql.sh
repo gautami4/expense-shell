@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERIDD=$(id -u)
+USERIDD=$( id -u )
 
 if ( $USERIDD -ne 0 )
 then

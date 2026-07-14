@@ -4,7 +4,7 @@ USERIDD=$( id -u )
 
 SOURCE_DIR="/home/ec2-user/app-logs"
 
-LOGS_FOLDER="/var/log/expense-shell"
+LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILES=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILES-$TIMESTAMP.log" 

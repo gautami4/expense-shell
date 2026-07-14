@@ -39,17 +39,17 @@ CHECK_ROOT(){
 echo "The script started at : $TIMESTAMP"  &>>$LOG_FILE_NAME
 
 
-LOGS_TO_BE_DELETED=$(find . -name "*.log" -mtime +14)
+LOGS_TO_BE_DELETED=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
-echo "$LOGS_TO_BE_DELETED"
+echo "files to be deleted $LOGS_TO_BE_DELETED"
 
-while read -r file
-do
+# while read -r file
+# do
 
-    echo "FILES TO BE DELETED $file"
-    rm -rf $file
+#     echo "FILES TO BE DELETED $file"
+#     rm -rf $file
 
-done <<< $LOGS_TO_BE_DELETED
+# done <<< $LOGS_TO_BE_DELETED
 
 
 

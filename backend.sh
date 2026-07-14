@@ -51,7 +51,6 @@ id expense &>>$LOG_FILE_NAME
 if [ $? -eq 0 ]
 then
     echo "User already exist ...skipping"
-    exit 1
 else
     useradd expense     &>>$LOG_FILE_NAME
     VALIDATE $? "Adding Expense User"

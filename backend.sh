@@ -71,7 +71,7 @@ VALIDATE $? "mysql installation"
 
 #loading schema
 
-mysql -h 98.88.248.138 -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h 13.218.229.151 -uroot -pExpenseApp@1 < /app/schema/backend.sql
 VALIDATE $? "setting up transactions schema and tables"
 
 systemctl daemon-reload     &>>$LOG_FILE_NAME

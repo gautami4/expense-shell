@@ -15,6 +15,7 @@ VALIDATE(){
             echo "$2 installation success"
         else
             echo "$2 installation Failure"
+            exit 1
         fi
 }
 

@@ -45,6 +45,8 @@ VALIDATE $? "Starting mysql server"
 mysql_secure_installation --set-root-pass ExpenseApp@1
 VALIDATE $? "setting root password"
 
+mysql -h 172.31.18.136 -u root -pExpenseApp@1 &>>$LOG_FILE_NAME
+
 
 
 

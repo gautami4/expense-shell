@@ -12,9 +12,9 @@ mkdir -p $LOGS_FOLDER
 VALIDATE(){
     if [ $1 -eq 0 ]
         then
-            echo "$2 installation success"
+            echo "$2 ..... success"
         else
-            echo "$2 installation Failure"
+            echo "$2 .....Failure"
             exit 1
         fi
 }
@@ -66,6 +66,7 @@ curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expen
 VALIDATE $? "Downloading backend"
 
 cd /app #moving to app directory
+rm -rf /app/*
 
 unzip /tmp/backend.zip  &>>$LOG_FILE_NAME
 VALIDATE $? "Unzip backed"

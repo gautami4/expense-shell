@@ -7,6 +7,8 @@ LOG_FILES=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILES-$TIMESTAMP.log" 
 
+mkdir -p $LOGS_FOLDER
+
 VALIDATE(){
     if [ $1 -eq 0 ]
         then

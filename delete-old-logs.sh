@@ -45,10 +45,8 @@ echo "files to be deleted $LOGS_TO_BE_DELETED"
 
 while read -r file
 do
-
     echo "deleted files : $file"
     rm -rf $file
-
 done <<< $LOGS_TO_BE_DELETED
 
 

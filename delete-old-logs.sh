@@ -43,13 +43,13 @@ LOGS_TO_BE_DELETED=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 echo "files to be deleted $LOGS_TO_BE_DELETED"
 
-# while read -r file
-# do
+while read -r file
+do
 
-#     echo "FILES TO BE DELETED $file"
-#     rm -rf $file
+    echo "deleted files : $file"
+    rm -rf $file
 
-# done <<< $LOGS_TO_BE_DELETED
+done <<< $LOGS_TO_BE_DELETED
 
 
 
